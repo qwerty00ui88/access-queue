@@ -1,0 +1,47 @@
+# Gradle 빌드 및 캐시 파일
+build/
+.gradle/
+.gradle-cache/
+!gradle-wrapper.properties
+gradle-wrapper.jar
+
+# IntelliJ IDEA 설정 파일
+.idea/
+*.iml
+
+# Eclipse 설정 파일 (필요 시)
+.classpath
+.project
+.settings/
+
+# 환경 변수 및 보안 파일
+application.properties
+application.yml
+application.yaml
+application-*.yaml
+.env
+secrets.yml
+
+# 로그 및 캐시 파일
+logs/
+*.log
+tmp/
+out/
+
+# 테스트 결과 파일
+*.test
+
+# MacOS 및 Windows 관련 파일
+.DS_Store
+Thumbs.db
+
+# Reports
+reports/
+
+# 특정 컴파일/임시 파일
+*.class
+*.bin
+*.uniqueId*
+
+# Ignore HELP.md if not required
+HELP.md
