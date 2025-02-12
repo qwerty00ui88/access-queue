@@ -2,6 +2,7 @@ package com.accessqueue.flow.controller;
 
 import com.accessqueue.flow.dto.AllowUserResponse;
 import com.accessqueue.flow.dto.AllowedUserResponse;
+import com.accessqueue.flow.dto.RankNumberResponse;
 import com.accessqueue.flow.dto.RegisterUserResponse;
 import com.accessqueue.flow.service.UserQueueService;
 import lombok.RequiredArgsConstructor;
@@ -36,5 +37,13 @@ public class UserQueueController {
                                                    @RequestParam(name = "user_id") Long userId) {
         return userQueueService.isAllowed(queue, userId)
                 .map(AllowedUserResponse::new);
+    }
+
+    // 대기 순위 조회
+    @GetMapping("/rank")
+    public Mono<RankNumberResponse> getRankUser(@RequestParam(name = "queue", defaultValue = "default") String queue,
+                                                @RequestParam(name = "user_id") Long userId) {
+        return userQueueService.getRank(queue, userId)
+                .map(RankNumberResponse::new);
     }
 }
